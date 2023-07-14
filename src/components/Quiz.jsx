@@ -57,7 +57,7 @@ export const Quiz = (props) => {
     
     for (let index = 0; index < objAns.length; index++) {
 
-      if(objAns[index].toLowerCase() === 
+      if(objAns[index].toLowerCase().trim() === 
       solution[index]?.value.toLowerCase().trim()) {
         setScore(prevScore => prevScore + 1) 
       }
