@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 
 export const Quiz = (props) => {  
   const [answer, setAnswer] = useState({})
@@ -9,25 +9,27 @@ export const Quiz = (props) => {
 
   let objAns = []
 
-  const Quiz = props.questions.map((question,id)=>{
-    return (
-      <div key={id} className='question'>
-        <p>
-          {objAns.push(question.answer)}. &nbsp;&nbsp;
-          {question.question}
-        </p>
-        <input type="text"
-         name={id} 
-         onChange={changeInput} 
-         onFocus={changeInput} 
-         className='answer'
-         onBlur={changeInput}
-         placeholder='Type Your Answer Here...'
-         />
-
-         <p className='hide'>{question.answer}</p>
-      </div>
-    )
+  const Quiz = useMemo(() => {
+    props.questions.map((question,id)=>{
+      return (
+        <div key={id} className='question'>
+          <p>
+            {objAns.push(question.answer)}. &nbsp;&nbsp;
+            {question.question}
+          </p>
+          <input type="text"
+           name={id} 
+           onChange={changeInput} 
+           onFocus={changeInput} 
+           className='answer'
+           onBlur={changeInput}
+           placeholder='Type Your Answer Here...'
+           />
+  
+           <p className='hide'>{question.answer}</p>
+        </div>
+      )
+    })
   })
   
   function changeInput (event) {
