@@ -73,6 +73,8 @@ function App() {
               <option value="sportsleisure">sports and leisure</option>
             </select>
 
+            <br />
+
             <select id="" name="questions" value={formData.questions} onChange={setChange}>
               <option value="5">5</option>
               <option value="10">10</option>
@@ -81,6 +83,8 @@ function App() {
               <option value="25">25</option>
               <option value="30">30</option>
             </select>
+
+            <br />
 
             <button type="submit">Start Quiz!</button>
           </form>

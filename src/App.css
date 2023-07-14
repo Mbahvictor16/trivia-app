@@ -8,3 +8,21 @@
 body {
   background: rgba(238, 238, 238, 0.51);
 }
+
+.form-box {
+  height: calc(100dvh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+  width: 250px;
+  padding: 8px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.form-box button {
+  margin: auto;
+}
