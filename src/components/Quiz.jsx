@@ -45,6 +45,7 @@ export const Quiz = (props) => {
 
     inputRef.current.querySelectorAll("input").forEach(input => {
       input.readOnly = true
+      input.blur()
     })
 
     const solution = Object.entries(answer).map(
